@@ -13,8 +13,8 @@ public class ChessMatch {
 		initialSetup();
 	}
 
-	public ChessPiece[][] getPieces() { 
-		//função que percorre a matriz board e transforma em uma outra matriz
+	public ChessPiece[][] getPieces() {
+		// função que percorre a matriz board e transforma em uma outra matriz
 		// ChessPiece fazendo um dowcastin
 
 		ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
@@ -28,15 +28,25 @@ public class ChessMatch {
 		}
 		return mat;
 	}
-	
+
 	private void placeNewPiece(char column, int row, ChessPiece piece) {
 		board.placePiece(piece, new ChessPosition(column, row).toPosition());
 	}
-	
+
 	private void initialSetup() {
-		placeNewPiece('b', 6, new Rook(board, Color.WHITE));
-		placeNewPiece('e', 8, new King(board, Color.BLACK));
-		placeNewPiece('e', 1, new King(board, Color.BLACK));		
+		placeNewPiece('c', 1, new Rook(board, Color.WHITE));
+		placeNewPiece('c', 2, new Rook(board, Color.WHITE));
+		placeNewPiece('d', 2, new Rook(board, Color.WHITE));
+		placeNewPiece('e', 2, new Rook(board, Color.WHITE));
+		placeNewPiece('e', 1, new Rook(board, Color.WHITE));
+		placeNewPiece('d', 1, new King(board, Color.WHITE));
+
+		placeNewPiece('c', 7, new Rook(board, Color.BLACK));
+		placeNewPiece('c', 8, new Rook(board, Color.BLACK));
+		placeNewPiece('d', 7, new Rook(board, Color.BLACK));
+		placeNewPiece('e', 7, new Rook(board, Color.BLACK));
+		placeNewPiece('e', 8, new Rook(board, Color.BLACK));
+		placeNewPiece('d', 8, new King(board, Color.BLACK));
 	}
 
 }
